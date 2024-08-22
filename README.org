@@ -1,0 +1,9 @@
+* clamps
+
+Common Lisp Aided Music Production System
+
+|---------+----------------------------------------|
+| source  | git:https://github.com/ormf/clamps.git |
+| commit  | c3c0051                                |
+| systems | clamps                                 |
+|---------+----------------------------------------|
