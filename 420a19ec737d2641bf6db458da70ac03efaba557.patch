@@ -1,0 +1,26 @@
+From 420a19ec737d2641bf6db458da70ac03efaba557 Mon Sep 17 00:00:00 2001
+From: Anthony Green <green@moxielogic.com>
+Date: Sun, 25 Aug 2024 10:04:22 -0400
+Subject: [PATCH] Don't assume quicklisp
+
+---
+ clamps.asd | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/clamps.asd b/clamps.asd
+index fa9d63e..041ed5d 100644
+--- a/clamps.asd
++++ b/clamps.asd
+@@ -2,8 +2,10 @@
+ 
+ (in-package :cl-user)
+ 
+-(pushnew (merge-pathnames "local-projects/clamps/packages/svg-import-export/" ql:*quicklisp-home*)
+-      asdf:*central-registry*)
++(when (find-package '#:QUICKLISP)
++  (pushnew (merge-pathnames "local-projects/clamps/packages/svg-import-export/"
++			    (eval (find-symbol "*QUICKLISP-HOME*" '#:QUICKLISP)))
++	   asdf:*central-registry*))
+ 
+ (asdf:defsystem #:clamps
+   :description "Common Lisp Aided Music Production System"
