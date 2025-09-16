@@ -4,6 +4,6 @@ Common Lisp Aided Music Production System
 
 |---------+----------------------------------------|
 | source  | git:https://github.com/ormf/clamps.git |
-| commit  | e14b6a2                                |
+| commit  | 5bc2b30                                |
 | systems | clamps                                 |
 |---------+----------------------------------------|
